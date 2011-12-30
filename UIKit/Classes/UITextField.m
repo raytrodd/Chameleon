@@ -453,6 +453,7 @@ NSString *const UITextFieldTextDidEndEditingNotification = @"UITextFieldTextDidE
 {
     if ([super becomeFirstResponder]) {
 		_placeholderTextLayer.hidden = YES;
+      _textLayer.hidden = NO;
         return [_textLayer becomeFirstResponder];
     } else {
         return NO;
