@@ -366,6 +366,10 @@ static BOOL TouchIsActive(UITouch *touch)
             if ([self _firstResponderCanPerformAction:@selector(commit:) withSender:key fromScreen:theScreen]) {
                 return [self _sendActionToFirstResponder:@selector(commit:) withSender:key fromScreen:theScreen];
             }
+        } else if (key.keyCode == 48) {
+          if ([self _firstResponderCanPerformAction:@selector(next:) withSender:key fromScreen:theScreen]) {
+            return [self _sendActionToFirstResponder:@selector(next:) withSender:key fromScreen:theScreen];
+          }
         }
     }
     

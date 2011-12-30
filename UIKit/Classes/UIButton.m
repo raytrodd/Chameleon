@@ -130,7 +130,8 @@ static NSString *UIButtonContentTypeImage = @"UIButtonContentTypeImage";
 
 - (UIColor *)_defaultTitleShadowColor
 {
-    return [UIColor whiteColor];
+//    return [UIColor whiteColor];
+  return nil;
 }
 
 - (id)_contentForState:(UIControlState)state type:(NSString *)type

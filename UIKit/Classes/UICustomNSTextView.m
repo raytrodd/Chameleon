@@ -82,11 +82,18 @@ static const CGFloat LargeNumberForText = 1.0e7; // Any larger dimensions and th
         [self setDisplaysLinkToolTips:NO];
         [self setAutomaticDataDetectionEnabled:NO];
         [self setSecureTextEntry:isSecure];
+
         
         // this is for a spell checking hack.. see below
         [[self layoutManager] setDelegate:self];
     }
     return self;
+}
+
+- (void)setTextColor:(NSColor *)color
+{
+  [super setTextColor:color];
+  [self setInsertionPointColor:color];  
 }
 
 - (void)updateStyles
