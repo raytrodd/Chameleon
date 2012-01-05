@@ -122,6 +122,8 @@ const NSUInteger UIScrollViewScrollAnimationFramesPerSecond = 60;
     _indicatorStyle = style;
     _horizontalScroller.indicatorStyle = style;
     _verticalScroller.indicatorStyle = style;
+    _verticalScroller.alwaysVisible = YES;
+    _horizontalScroller.alwaysVisible = YES;
 }
 
 - (void)setShowsHorizontalScrollIndicator:(BOOL)show
@@ -434,12 +436,12 @@ const NSUInteger UIScrollViewScrollAnimationFramesPerSecond = 60;
 
 - (void)mouseMoved:(CGPoint)delta withEvent:(UIEvent *)event
 {
-    UITouch *touch = [[event allTouches] anyObject];
-    const CGPoint point = [touch locationInView:self];
-    const CGFloat scrollerSize = UIScrollerWidthForBoundsSize(self.bounds.size);
-    
-    _horizontalScroller.alwaysVisible = CGRectContainsPoint(CGRectInset(_horizontalScroller.frame, -scrollerSize, -scrollerSize), point);
-    _verticalScroller.alwaysVisible = CGRectContainsPoint(CGRectInset(_verticalScroller.frame, -scrollerSize, -scrollerSize), point);
+//    UITouch *touch = [[event allTouches] anyObject];
+//    const CGPoint point = [touch locationInView:self];
+//    const CGFloat scrollerSize = UIScrollerWidthForBoundsSize(self.bounds.size);
+//    
+//    _horizontalScroller.alwaysVisible = CGRectContainsPoint(CGRectInset(_horizontalScroller.frame, -scrollerSize, -scrollerSize), point);
+//    _verticalScroller.alwaysVisible = CGRectContainsPoint(CGRectInset(_verticalScroller.frame, -scrollerSize, -scrollerSize), point);
     
     [super mouseMoved:delta withEvent:event];
 }
@@ -447,8 +449,8 @@ const NSUInteger UIScrollViewScrollAnimationFramesPerSecond = 60;
 - (void)mouseExitedView:(UIView *)exited enteredView:(UIView *)entered withEvent:(UIEvent *)event
 {
     if ([exited isDescendantOfView:self] && ![entered isDescendantOfView:self]) {
-        _horizontalScroller.alwaysVisible = NO;
-        _verticalScroller.alwaysVisible = NO;
+//        _horizontalScroller.alwaysVisible = NO;
+//        _verticalScroller.alwaysVisible = NO;
     }
     
     [super mouseExitedView:exited enteredView:entered withEvent:event];
@@ -487,7 +489,7 @@ const NSUInteger UIScrollViewScrollAnimationFramesPerSecond = 60;
     const CGPoint point = [touch locationInView:self];
     
     if (!CGRectContainsPoint(scroller.frame,point)) {
-        scroller.alwaysVisible = NO;
+//        scroller.alwaysVisible = NO;
     }
 }
 
