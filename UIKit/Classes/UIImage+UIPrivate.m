@@ -197,6 +197,21 @@ NSMutableDictionary *imageCache = nil;
 	return [self _frameworkImageWithName:@"<UISearchBar> search-icon.png" leftCapWidth:0.0f topCapHeight:0.0f];
 }
 
++ (UIImage*) _sliderTrackImage
+{
+	return [self _frameworkImageWithName:@"<UISlider> track.png" leftCapWidth:5.0f topCapHeight:0.0f];  
+}
+
++ (UIImage*) _sliderKnobImage
+{
+	return [self _frameworkImageWithName:@"<UISlider> knob.png" leftCapWidth:5.0f topCapHeight:0.0f];  
+}
+
++ (UIImage*) _sliderKnobImageDisabled
+{
+	return [self _frameworkImageWithName:@"<UISlider> knob-disabled.png" leftCapWidth:5.0f topCapHeight:0.0f];  
+}
+
 - (UIImage *)_toolbarImage
 {
     // NOTE.. I don't know where to put this, really, but it seems like the real UIKit reduces image size by 75% if they are too

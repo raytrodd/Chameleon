@@ -56,6 +56,9 @@
 + (UIImage *)_tabBarItemImage;
 + (UIImage *)_textFieldRoundedRectBackground;
 + (UIImage *)_searchBarIcon;
++ (UIImage*) _sliderKnobImage;
++ (UIImage*) _sliderTrackImage;
++ (UIImage*) _sliderKnobImageDisabled;
 
 - (UIImage *)_toolbarImage;		// returns a new image which is modified as required for toolbar buttons (turned into a solid color)
 + (UIImage *)_imageFromNSImage:(NSImage *)ns;

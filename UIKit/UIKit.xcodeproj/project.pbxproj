@@ -234,6 +234,9 @@
 		14FA8C72121DA4A000C4264B /* UIViewAnimationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FA8C5A121DA4A000C4264B /* UIViewAnimationGroup.m */; };
 		14FA8C73121DA4A000C4264B /* UIViewLayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 14FA8C5B121DA4A000C4264B /* UIViewLayoutManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		14FA8C74121DA4A000C4264B /* UIViewLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FA8C5C121DA4A000C4264B /* UIViewLayoutManager.m */; };
+		2DBB45D214C7854E00004568 /* <UISlider> track.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB45D014C7854E00004568 /* <UISlider> track.png */; };
+		2DBB45D714C7876300004568 /* <UISlider> knob-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB45D514C7876300004568 /* <UISlider> knob-disabled.png */; };
+		2DBB45D814C7876300004568 /* <UISlider> knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB45D614C7876300004568 /* <UISlider> knob.png */; };
 		38615C6A133A54DF00841EEA /* UINSCellControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 38615C68133A54DF00841EEA /* UINSCellControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38615C6B133A54DF00841EEA /* UINSCellControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38615C69133A54DF00841EEA /* UINSCellControl.m */; };
 		38615C78133A81B900841EEA /* UIFont+UIPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 38615C77133A81B900841EEA /* UIFont+UIPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -499,6 +502,9 @@
 		14FA8C5A121DA4A000C4264B /* UIViewAnimationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAnimationGroup.m; sourceTree = "<group>"; };
 		14FA8C5B121DA4A000C4264B /* UIViewLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewLayoutManager.h; sourceTree = "<group>"; };
 		14FA8C5C121DA4A000C4264B /* UIViewLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewLayoutManager.m; sourceTree = "<group>"; };
+		2DBB45D014C7854E00004568 /* <UISlider> track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> track.png"; path = "Resources/<UISlider> track.png"; sourceTree = "<group>"; };
+		2DBB45D514C7876300004568 /* <UISlider> knob-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> knob-disabled.png"; path = "Resources/<UISlider> knob-disabled.png"; sourceTree = "<group>"; };
+		2DBB45D614C7876300004568 /* <UISlider> knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> knob.png"; path = "Resources/<UISlider> knob.png"; sourceTree = "<group>"; };
 		32DBCF5E0370ADEE00C91783 /* UIKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKit_Prefix.pch; sourceTree = "<group>"; };
 		38615C68133A54DF00841EEA /* UINSCellControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINSCellControl.h; sourceTree = "<group>"; };
 		38615C69133A54DF00841EEA /* UINSCellControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINSCellControl.m; sourceTree = "<group>"; };
@@ -592,6 +598,9 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2DBB45D514C7876300004568 /* <UISlider> knob-disabled.png */,
+				2DBB45D614C7876300004568 /* <UISlider> knob.png */,
+				2DBB45D014C7854E00004568 /* <UISlider> track.png */,
 				14F0BC0B1288A67F00BA54F9 /* <UIBarButtonSystemItem> add.png */,
 				14F0BC0C1288A67F00BA54F9 /* <UIBarButtonSystemItem> reply.png */,
 				14F56F3812664D350045EC82 /* <UIPopoverView> arrow-bottom.png */,
@@ -1095,6 +1104,9 @@
 				14DD1C371289B4D500DCF231 /* <UIToolbar> button.png in Resources */,
 				88D0B2A613674EF2008A073F /* <UITextField> roundedRectBackgroundImage.png in Resources */,
 				882C32C61368DD03007B6E4B /* <UISearchBar> search-icon.png in Resources */,
+				2DBB45D214C7854E00004568 /* <UISlider> track.png in Resources */,
+				2DBB45D714C7876300004568 /* <UISlider> knob-disabled.png in Resources */,
+				2DBB45D814C7876300004568 /* <UISlider> knob.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
