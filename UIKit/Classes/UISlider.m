@@ -85,7 +85,9 @@
 - (void)drawRect:(CGRect)rect
 {
   CGRect knobRect = [self knobRect];
-  CGRect trackRect = CGRectInset(self.bounds, knobRect.size.width / 2, (kUISliderViewHeight - kUISliderTrackHeight) / 2);
+  CGRect bounds = self.bounds;
+  bounds.size.height = kUISliderViewHeight;
+  CGRect trackRect = CGRectInset(bounds, knobRect.size.width / 2, (kUISliderViewHeight - kUISliderTrackHeight) / 2);
   
   [_trackImage drawInRect:trackRect];
   UIImage* knobImage = self.enabled ? _knobImage : _knobImageDisabled;
