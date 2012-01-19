@@ -70,6 +70,7 @@
     _knobImage = [[UIImage _sliderKnobImage] retain];
     _trackImage = [[UIImage _sliderTrackImage] retain];
     _knobImageDisabled = [[UIImage _sliderKnobImageDisabled] retain];
+    _trackImageDisabled = [[UIImage _sliderTrackImageDisabled] retain];
   }
   return self;
 }
@@ -78,7 +79,8 @@
 {
   [_knobImage release];
   [_trackImage release];
-  [_knobImageDisabled release];;
+  [_knobImageDisabled release];
+  [_trackImageDisabled release];
   [super dealloc];
 }
 
@@ -89,7 +91,9 @@
   bounds.size.height = kUISliderViewHeight;
   CGRect trackRect = CGRectInset(bounds, knobRect.size.width / 2, (kUISliderViewHeight - kUISliderTrackHeight) / 2);
   
-  [_trackImage drawInRect:trackRect];
+  UIImage* trackImage = self.enabled ? _trackImage : _trackImageDisabled;
+  [trackImage drawInRect:trackRect];
+  
   UIImage* knobImage = self.enabled ? _knobImage : _knobImageDisabled;
   [knobImage drawInRect:knobRect];
 }

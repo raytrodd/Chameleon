@@ -237,6 +237,7 @@
 		2DBB45D214C7854E00004568 /* <UISlider> track.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB45D014C7854E00004568 /* <UISlider> track.png */; };
 		2DBB45D714C7876300004568 /* <UISlider> knob-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB45D514C7876300004568 /* <UISlider> knob-disabled.png */; };
 		2DBB45D814C7876300004568 /* <UISlider> knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB45D614C7876300004568 /* <UISlider> knob.png */; };
+		2DBB45E714C8CBB100004568 /* <UISlider> track-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB45E614C8CBB100004568 /* <UISlider> track-disabled.png */; };
 		38615C6A133A54DF00841EEA /* UINSCellControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 38615C68133A54DF00841EEA /* UINSCellControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38615C6B133A54DF00841EEA /* UINSCellControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38615C69133A54DF00841EEA /* UINSCellControl.m */; };
 		38615C78133A81B900841EEA /* UIFont+UIPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 38615C77133A81B900841EEA /* UIFont+UIPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -505,6 +506,7 @@
 		2DBB45D014C7854E00004568 /* <UISlider> track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> track.png"; path = "Resources/<UISlider> track.png"; sourceTree = "<group>"; };
 		2DBB45D514C7876300004568 /* <UISlider> knob-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> knob-disabled.png"; path = "Resources/<UISlider> knob-disabled.png"; sourceTree = "<group>"; };
 		2DBB45D614C7876300004568 /* <UISlider> knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> knob.png"; path = "Resources/<UISlider> knob.png"; sourceTree = "<group>"; };
+		2DBB45E614C8CBB100004568 /* <UISlider> track-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> track-disabled.png"; path = "Resources/<UISlider> track-disabled.png"; sourceTree = "<group>"; };
 		32DBCF5E0370ADEE00C91783 /* UIKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKit_Prefix.pch; sourceTree = "<group>"; };
 		38615C68133A54DF00841EEA /* UINSCellControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINSCellControl.h; sourceTree = "<group>"; };
 		38615C69133A54DF00841EEA /* UINSCellControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINSCellControl.m; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2DBB45E614C8CBB100004568 /* <UISlider> track-disabled.png */,
 				2DBB45D514C7876300004568 /* <UISlider> knob-disabled.png */,
 				2DBB45D614C7876300004568 /* <UISlider> knob.png */,
 				2DBB45D014C7854E00004568 /* <UISlider> track.png */,
@@ -1107,6 +1110,7 @@
 				2DBB45D214C7854E00004568 /* <UISlider> track.png in Resources */,
 				2DBB45D714C7876300004568 /* <UISlider> knob-disabled.png in Resources */,
 				2DBB45D814C7876300004568 /* <UISlider> knob.png in Resources */,
+				2DBB45E714C8CBB100004568 /* <UISlider> track-disabled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

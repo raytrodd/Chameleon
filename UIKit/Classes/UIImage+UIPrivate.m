@@ -202,6 +202,11 @@ NSMutableDictionary *imageCache = nil;
 	return [self _frameworkImageWithName:@"<UISlider> track.png" leftCapWidth:5.0f topCapHeight:0.0f];  
 }
 
++ (UIImage*) _sliderTrackImageDisabled
+{
+	return [self _frameworkImageWithName:@"<UISlider> track-disabled.png" leftCapWidth:5.0f topCapHeight:0.0f];  
+}
+
 + (UIImage*) _sliderKnobImage
 {
 	return [self _frameworkImageWithName:@"<UISlider> knob.png" leftCapWidth:5.0f topCapHeight:0.0f];  

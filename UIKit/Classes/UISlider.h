@@ -44,6 +44,7 @@
   float _position;
   UIImage* _knobImage;
   UIImage* _trackImage;
+  UIImage* _trackImageDisabled;
   UIImage* _knobImageDisabled;
   
 }
