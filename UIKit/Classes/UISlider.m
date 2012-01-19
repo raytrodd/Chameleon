@@ -105,10 +105,12 @@
 
 - (void)setValue:(float)value
 {
+  value = MIN(value, _maximumValue);
+  value = MAX(value, _minimumValue);
   if (value != _value) {
     CGFloat valueDistance = _maximumValue - _minimumValue;
     CGFloat pixelDistance = self.bounds.size.width - [self knobRect].size.width;
-    CGFloat progress = value / valueDistance;
+    CGFloat progress = (value - _minimumValue) / valueDistance;
     _position = (pixelDistance * progress);
     _value = value;
     [self sendActionsForControlEvents:UIControlEventValueChanged];  
