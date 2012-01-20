@@ -103,16 +103,21 @@
   return CGRectMake(_position, 0, kUISliderKnobWidth, kUISliderViewHeight);
 }
 
+- (void)recalculatePosition
+{
+  CGFloat valueDistance = _maximumValue - _minimumValue;
+  CGFloat pixelDistance = self.bounds.size.width - [self knobRect].size.width;
+  CGFloat progress = (_value - _minimumValue) / valueDistance;
+  _position = (pixelDistance * progress);
+}
+
 - (void)setValue:(float)value
 {
   value = MIN(value, _maximumValue);
   value = MAX(value, _minimumValue);
   if (value != _value) {
-    CGFloat valueDistance = _maximumValue - _minimumValue;
-    CGFloat pixelDistance = self.bounds.size.width - [self knobRect].size.width;
-    CGFloat progress = (value - _minimumValue) / valueDistance;
-    _position = (pixelDistance * progress);
     _value = value;
+    [self recalculatePosition];
     [self sendActionsForControlEvents:UIControlEventValueChanged];  
     [self setNeedsDisplay];
   }
@@ -135,9 +140,7 @@
 - (void)setFrame:(CGRect)frame
 {
   [super setFrame:frame];
-  float value = _value;
-  _value = 0;
-  [self setValue:value];
+  [self recalculatePosition];
 }
 
 #pragma mark UIResponder
