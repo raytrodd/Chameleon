@@ -38,13 +38,20 @@
 @class UIImageView, UIImage;
 
 @interface UISlider : UIControl {
-    float _value;
-    float _minimumValue;
-    float _maximumValue;
+  float _value;
+  float _minimumValue;
+  float _maximumValue;
+  float _position;
+  UIImage* _knobImage;
+  UIImage* _trackImage;
+  UIImage* _trackImageDisabled;
+  UIImage* _knobImageDisabled;
+  
 }
 
 @property (nonatomic) float value;
 @property (nonatomic) float minimumValue;
 @property (nonatomic) float maximumValue;
+@property (nonatomic) float position;
 
 @end

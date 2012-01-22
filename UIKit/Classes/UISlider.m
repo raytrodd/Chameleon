@@ -34,13 +34,149 @@
  */
 
 #import "UISlider.h"
+#import "UITouch.h"
+#import "UIColor.h"
+#import "UIStringDrawing.h"
+#import "UIGraphics.h"
+#import "UIImage.h"
+#import "UIImage+UIPrivate.h"
 
+#define kUISliderTrackHeight 14
+#define kUISliderViewHeight 29
+#define kUISliderKnobWidth 27
+
+@interface UISlider(Privates)
+- (CGRect)knobRect;
+- (CGRect)trackRect;
+@end
 
 @implementation UISlider
 
 @synthesize value = _value;
 @synthesize minimumValue = _minimumValue;
 @synthesize maximumValue = _maximumValue;
+@synthesize position = _position;
+
+#pragma mark UIView
+
+- (id)initWithFrame:(CGRect)frame
+{
+  if ((self = [super initWithFrame:frame])) {
+    self.backgroundColor = [UIColor clearColor];
+    _value = 0;
+    _minimumValue = 0;
+    _maximumValue = 10;
+    
+    _knobImage = [[UIImage _sliderKnobImage] retain];
+    _trackImage = [[UIImage _sliderTrackImage] retain];
+    _knobImageDisabled = [[UIImage _sliderKnobImageDisabled] retain];
+    _trackImageDisabled = [[UIImage _sliderTrackImageDisabled] retain];
+  }
+  return self;
+}
+
+- (void)dealloc
+{
+  [_knobImage release];
+  [_trackImage release];
+  [_knobImageDisabled release];
+  [_trackImageDisabled release];
+  [super dealloc];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+  CGRect knobRect = [self knobRect];
+  CGRect bounds = self.bounds;
+  bounds.size.height = kUISliderViewHeight;
+  CGRect trackRect = CGRectInset(bounds, knobRect.size.width / 2, (kUISliderViewHeight - kUISliderTrackHeight) / 2);
+  
+  UIImage* trackImage = self.enabled ? _trackImage : _trackImageDisabled;
+  [trackImage drawInRect:trackRect];
+  
+  UIImage* knobImage = self.enabled ? _knobImage : _knobImageDisabled;
+  [knobImage drawInRect:knobRect];
+}
+
+- (CGRect)knobRect
+{
+  return CGRectMake(_position, 0, kUISliderKnobWidth, kUISliderViewHeight);
+}
+
+- (void)recalculatePosition
+{
+  CGFloat valueDistance = _maximumValue - _minimumValue;
+  CGFloat pixelDistance = self.bounds.size.width - [self knobRect].size.width;
+  CGFloat progress = (_value - _minimumValue) / valueDistance;
+  _position = (pixelDistance * progress);
+}
+
+- (void)setValue:(float)value
+{
+  value = MIN(value, _maximumValue);
+  value = MAX(value, _minimumValue);
+  if (value != _value) {
+    _value = value;
+    [self recalculatePosition];
+    [self sendActionsForControlEvents:UIControlEventValueChanged];  
+    [self setNeedsDisplay];
+  }
+}
+
+- (void)setPosition:(float)position
+{
+  if (position != _position) {
+    CGFloat valueDistance = _maximumValue - _minimumValue;
+    CGFloat pixelDistance = self.bounds.size.width - [self knobRect].size.width;
+    CGFloat progress = position / pixelDistance;
+    CGFloat value = (valueDistance * progress) + _minimumValue;
+    _position = position;
+    _value = value;
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    [self setNeedsDisplay];
+  }
+}
+
+- (void)setFrame:(CGRect)frame
+{
+  [super setFrame:frame];
+  [self recalculatePosition];
+}
+
+#pragma mark UIResponder
+
+- (void)handleTouchAt:(CGFloat)x
+{
+  CGRect knobRect = [self knobRect];
+  
+  x = x - knobRect.size.width / 2;
+  
+  if (x < self.bounds.origin.x) {
+    x = self.bounds.origin.x;
+  } else if (x > (self.bounds.size.width - knobRect.size.width)) {
+    x = self.bounds.size.width - knobRect.size.width;
+  } 
+  self.position = x;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  UITouch *touch = [touches anyObject];
+  CGFloat x = [touch locationInView:self].x;
+  [self handleTouchAt:x];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  UITouch *touch = [touches anyObject];
+  CGFloat x = [touch locationInView:self].x;
+  [self handleTouchAt:x];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  
+}
 
 - (NSString *)description
 {
